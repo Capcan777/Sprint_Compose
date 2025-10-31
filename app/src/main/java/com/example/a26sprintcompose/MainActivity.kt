@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
@@ -177,18 +176,21 @@ class MainActivity : ComponentActivity() {
     ) {
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 4.dp),
-
+                .padding(vertical = 4.dp), verticalAlignment = Alignment.CenterVertically
             ) {
             Text(
-                text = "$label: ", style = labelStyle, modifier = Modifier.padding(start = 70.dp)
+                text = "$label: ",
+                style = labelStyle,
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.End
             )
 
             Text(
                 text = value,
                 style = valueStyle,
-                modifier = Modifier.padding(start = 8.dp),
+                modifier = Modifier
+                    .padding(start = 8.dp)
+                    .weight(1f),
                 textAlign = TextAlign.Start
             )
 
