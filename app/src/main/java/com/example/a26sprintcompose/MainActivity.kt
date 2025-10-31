@@ -31,10 +31,22 @@ import androidx.compose.ui.unit.sp
 import kotlin.text.ifEmpty
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
+            ContactDetails(
+                Contact(
+                    name = "Моника",
+                    surname = "Анна Мария",
+                    familyName = "Беллуччи",
+                    imageRes = R.drawable.monika,
+                    isFavorite = true,
+                    phone = "+7 495 495 95 95",
+                    address = "Москва, улица Смоленская, дом 12, квартира 12",
+                    email = "monika@bellucci.com"
+                )
+            )
         }
     }
 
